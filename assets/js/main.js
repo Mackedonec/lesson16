@@ -62,50 +62,50 @@ console.log(wordsList(myLongStr, 'rep')); // {"repellendus", "repudiandae", "rep
  * isISO – опциональный параметр переключения формата даты.
  */
 
-// let myDate = new Date();
+let myDate = new Date();
 
-// function getLocalDate(date, isSeconds = false, isISO = false) {
-//     const reg = new RegExp(':\\d{2}$', 'g');
-//     let res;
+function getLocalDate(date, isSeconds = false, isISO = false) {
+    const reg = new RegExp(':\\d{2}$', 'g');
+    let res;
 
-//     if (!isISO) {
-//         res = isSeconds
-//             ? date.toLocaleString()
-//             : date.toLocaleString().replace(reg, '');
-//     } else {
-//         const year = date.getFullYear();
-//         const month = date.getMonth() + 1 < 9 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
-//         const day = date.getDate() < 9 ? `0${date.getDate()}` : date.getDate();
-//         const hour = date.getHours() < 9 ? `0${date.getHours()}` : date.getHours();
-//         const minutes = date.getMinutes() < 9 ? `0${date.getMinutes()}` : date.getMinutes();
-//         const seconds = date.getSeconds() < 9 ? `0${date.getSeconds()}` : date.getSeconds();
+    if (!isISO) {
+        res = isSeconds
+            ? date.toLocaleString()
+            : date.toLocaleString().replace(reg, '');
+    } else {
+        const year = date.getFullYear();
+        const month = date.getMonth() + 1 < 9 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
+        const day = date.getDate() < 9 ? `0${date.getDate()}` : date.getDate();
+        const hour = date.getHours() < 9 ? `0${date.getHours()}` : date.getHours();
+        const minutes = date.getMinutes() < 9 ? `0${date.getMinutes()}` : date.getMinutes();
+        const seconds = date.getSeconds() < 9 ? `0${date.getSeconds()}` : date.getSeconds();
 
-//         res = isSeconds
-//             ? `${year}-${month}-${day}, ${hour}:${minutes}:${seconds}`
-//             : `${year}-${month}-${day}, ${hour}:${minutes}`;
-//     }
+        res = isSeconds
+            ? `${year}-${month}-${day}, ${hour}:${minutes}:${seconds}`
+            : `${year}-${month}-${day}, ${hour}:${minutes}`;
+    }
 
-//     return res;
-// };
+    return res;
+};
 
-// console.log(getLocalDate(myDate)); // 16.07.2019, 00:15
-// console.log(getLocalDate(myDate, true)); // 16.07.2019, 00:15:32
-// console.log(getLocalDate(myDate, false, true)); // 2019-06-02, 00:15
-// console.log(getLocalDate(myDate, true, true)); // 2019-06-02, 00:15:32
-// console.log(getLocalDate(new Date(123456))); // 01.01.1970, 03:02
-// console.log(getLocalDate(new Date(123456), true)); // 01.01.1970, 03:02:03
-// console.log(getLocalDate(new Date(123456), false, true)); // 1970-01-01, 03:02
-// console.log(getLocalDate(new Date(123456), true, true)); // 1970-01-01, 03:02:03
+console.log(getLocalDate(myDate)); // 16.07.2019, 00:15
+console.log(getLocalDate(myDate, true)); // 16.07.2019, 00:15:32
+console.log(getLocalDate(myDate, false, true)); // 2019-06-02, 00:15
+console.log(getLocalDate(myDate, true, true)); // 2019-06-02, 00:15:32
+console.log(getLocalDate(new Date(123456))); // 01.01.1970, 03:02
+console.log(getLocalDate(new Date(123456), true)); // 01.01.1970, 03:02:03
+console.log(getLocalDate(new Date(123456), false, true)); // 1970-01-01, 03:02
+console.log(getLocalDate(new Date(123456), true, true)); // 1970-01-01, 03:02:03
 
-// // тестирование
-// console.log(getLocalDate(new Date(123456)) === '01.01.1970, 03:02');
-// console.log(getLocalDate(new Date(123456), true) === '01.01.1970, 03:02:03');
-// console.log(getLocalDate(new Date(123456), false, true) === '1970-01-01, 03:02');
-// console.log(getLocalDate(new Date(123456), true, true) === '1970-01-01, 03:02:03');
-// console.log(getLocalDate(new Date(1999999123456)) === '18.05.2033, 06:18');
-// console.log(getLocalDate(new Date(1999999123456), true) === '18.05.2033, 06:18:43');
-// console.log(getLocalDate(new Date(1999999123456), false, true) === '2033-05-18, 06:18');
-// console.log(getLocalDate(new Date(1999999123456), true, true) === '2033-05-18, 06:18:43');
+// тестирование
+console.log(getLocalDate(new Date(123456)) === '01.01.1970, 03:02');
+console.log(getLocalDate(new Date(123456), true) === '01.01.1970, 03:02:03');
+console.log(getLocalDate(new Date(123456), false, true) === '1970-01-01, 03:02');
+console.log(getLocalDate(new Date(123456), true, true) === '1970-01-01, 03:02:03');
+console.log(getLocalDate(new Date(1999999123456)) === '18.05.2033, 06:18');
+console.log(getLocalDate(new Date(1999999123456), true) === '18.05.2033, 06:18:43');
+console.log(getLocalDate(new Date(1999999123456), false, true) === '2033-05-18, 06:18');
+console.log(getLocalDate(new Date(1999999123456), true, true) === '2033-05-18, 06:18:43');
 
 // /*
 //  * #3
